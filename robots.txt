@@ -1,0 +1,4 @@
+# The canonical home for these pages is https://usamamoin.com/legal/
+# This origin only exists to back that rewrite, so keep it out of search.
+User-agent: *
+Disallow: /
