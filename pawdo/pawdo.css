@@ -1,0 +1,46 @@
+:root{
+  --canvas:#FAF7F2;--surface:#FFFFFF;--ink:#1A1726;--muted:#6B6577;
+  --hairline:#1A17261A;--tint:#FDE6D8;--tangerine:#F47A3C;--link:#A8420F;
+  --lift:0 1px 2px #1A17260F,0 10px 28px #1A172614;--doodle:.5;
+}
+@media(prefers-color-scheme:dark){:root{
+  --canvas:#141220;--surface:#1E1B2C;--ink:#F5F1EA;--muted:#A9A3B5;
+  --hairline:#FFFFFF1F;--tint:#3A2418;--link:#FF9A66;
+  --lift:0 1px 2px #00000066,0 10px 28px #00000080;--doodle:.35;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--canvas);color:var(--ink);font:400 16px/1.7 Figtree,-apple-system,system-ui,sans-serif;position:relative;overflow-x:hidden;min-height:100vh}
+.doodle{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:var(--doodle);color:var(--tangerine)}
+.doodle svg{position:absolute;width:64px;height:64px;fill:currentColor;opacity:.22}
+.doodle .a{top:90px;right:4%;transform:rotate(14deg)}
+.doodle .b{top:55%;left:-14px;transform:rotate(-24deg);width:88px}
+.doodle .c{bottom:60px;right:6%;transform:rotate(-12deg);width:72px}
+.wrap{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 16px}
+header{padding:20px 0 12px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none}
+.brand img{width:44px;height:44px;border-radius:12px;box-shadow:var(--lift)}
+.brand span{font:600 26px/1 Fraunces,Georgia,serif}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+nav a{display:inline-block;padding:8px 16px;border-radius:999px;background:var(--surface);border:1px solid var(--hairline);color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+nav a[aria-current="page"]{background:var(--tangerine);border-color:var(--tangerine);color:#1A1726}
+nav a:focus-visible,a:focus-visible{outline:3px solid var(--tangerine);outline-offset:2px}
+main.card{background:var(--surface);border:1px solid var(--hairline);border-radius:28px;box-shadow:var(--lift);padding:24px 20px 28px;margin:12px 0 0;overflow-wrap:anywhere}
+.stage{background:var(--tint);border-radius:20px;text-align:center;padding:12px 0 0;margin:0 0 24px;overflow:hidden}
+.stage img{display:block;margin:0 auto;width:min(240px,70%);height:auto}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+h1{font-size:28px;line-height:1.2;margin:0 0 16px}
+h2{font-size:21px;line-height:1.3;margin:32px 0 8px;padding-top:24px;border-top:1px solid var(--hairline)}
+p{margin:0 0 16px}
+ul{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 10px}
+li::marker{color:var(--tangerine)}
+main a{color:var(--link);text-decoration:underline;text-decoration-color:var(--tangerine);text-decoration-thickness:2px;text-underline-offset:3px}
+footer{padding:24px 0 40px;text-align:center;color:var(--muted);font-size:14px;line-height:1.6}
+footer a{color:var(--link);text-decoration:underline;text-decoration-color:var(--tangerine);text-underline-offset:3px}
+@media(min-width:600px){
+  .wrap{padding:0 24px}
+  main.card{padding:36px 40px 40px}
+  h1{font-size:34px}
+  .brand span{font-size:30px}
+}
